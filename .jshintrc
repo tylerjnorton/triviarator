@@ -1,0 +1,15 @@
+{
+	"unused": "vars",
+	"eqeqeq": true,
+	"debug": true,
+	"latedef": true,
+	"undef": true,
+	"esnext": true,
+	"loopfunc": true,
+	"browser": true,
+	"globals": {
+		"console": true,
+		"require": true,
+		"module": true
+	}
+}

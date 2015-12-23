@@ -1,0 +1,12 @@
+.row
+	.columns.desktop-12.align-center
+		h6 Edit Team Name
+		input(type='text', placeholer='Edit Team Name', value=name)
+.row
+	.columns.desktop-12.align-center
+		h6 Edit Team Color
+		- for(var i = 1; i < 25; i++)
+			.color-box.columns.desktop-3(class='color-#{i}', color='color-#{i}')
+.row
+	.columns.desktop-12.align-center
+		button Save Changes

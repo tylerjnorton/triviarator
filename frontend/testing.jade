@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+	head
+		script(src="http://localhost:7776/livereload.js")
+		title Triviarator Testing	
+		link(rel='stylesheet' type='text/css' href='/css/style.css')
+	body
+		.row
+			iframe.columns.desktop-2(src='http://localhost:7777/#team', height="800px")
+			iframe.columns.desktop-4(src='http://localhost:7777/#board', height="800px")
+			iframe.columns.desktop-6(src='http://localhost:7777/#host', height="800px")
+		.row
+			image(src='/css/flowchart.png')

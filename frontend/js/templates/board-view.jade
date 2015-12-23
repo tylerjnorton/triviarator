@@ -1,0 +1,87 @@
+main.scoreboard
+	.row
+		.columns.desktop-3.no-pad-top.black-bg.scoreul
+			h2.align-center Scoreboard
+			ul
+				if teams
+					each team in Object.keys(teams).map(function (t) { return teams[t]; }).sort(function (a,b) { return a.points < b.points; })
+						li(class=team.color)
+							h5.align-left #{team.name} 
+								span.align-right #{team.points} pts
+		.columns.desktop-9.align-center.white-bg
+			h1 #{title}
+		.columns.desktop-9.align-center.no-pad-top
+			.row.relative
+				.coluns.desktop-12
+					if rounds 
+						- var currentRound = rounds[rounds.length - 1];
+						if currentRound.status === 'PREQUESTION'
+							.row
+								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
+									.row
+										.columns.desktop-2.no-pad
+											h6.color-10.align-center Correct
+											h1.color-10.align-center #{currentRound.points}
+											h6.color-10.align-center Points
+										.columns.desktop-8
+											h5 Question #{rounds.length}
+											h2 #{currentRound.title}
+										.columns.desktop-2.no-pad
+											h6.color-3.align-center Wrong
+											h1.color-3.align-center #{currentRound.wrongPoints}
+											h6.color-3.align-center Points
+								.columns.desktop-12.vertical-pad
+									h2 Please wait while the next question is being prepared.
+									h4 #{currentRound.prequestionText}
+						if currentRound.status === 'OPEN'
+							.row
+								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
+									.row
+										.columns.desktop-2.no-pad
+											h6.color-10.align-center Correct
+											h1.color-10.align-center #{currentRound.points}
+											h6.color-10.align-center Points
+										.columns.desktop-8
+											h5 Question #{rounds.length}
+											h2 #{currentRound.title}
+										.columns.desktop-2.no-pad
+											h6.color-3.align-center Wrong
+											h1.color-3.align-center #{currentRound.wrongPoints}
+											h6.color-3.align-center Points
+								.columns.desktop-12.vertical-pad
+									h1 #{currentRound.question}
+						if currentRound.status === 'PAUSED'
+							.row
+								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
+									.row
+										.columns.desktop-2.no-pad
+											h6.color-10.align-center Correct
+											h1.color-10.align-center #{currentRound.points}
+											h6.color-10.align-center Points
+										.columns.desktop-8
+											h5 Question #{rounds.length}
+											h2 #{currentRound.title}
+										.columns.desktop-2.no-pad
+											h6.color-3.align-center Wrong
+											h1.color-3.align-center #{currentRound.wrongPoints}
+											h6.color-3.align-center Points
+								.columns.desktop-12.vertical-pad
+									h2 #{currentRound.buzzed.name} buzzed in!
+						if currentRound.status === 'CLOSED'	
+							.row
+								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
+									.row
+										.columns.desktop-2.no-pad
+											h6.color-10.align-center Correct
+											h1.color-10.align-center #{currentRound.points}
+											h6.color-10.align-center Points
+										.columns.desktop-8
+											h5 Question #{rounds.length}
+											h2 #{currentRound.title}
+										.columns.desktop-2.no-pad
+											h6.color-3.align-center Wrong
+											h1.color-3.align-center #{currentRound.wrongPoints}
+											h6.color-3.align-center Points
+								.columns.desktop-12.vertical-pad
+									h2 No one answered that one correctly.
+footer

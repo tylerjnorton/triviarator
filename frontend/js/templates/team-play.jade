@@ -1,0 +1,30 @@
+if rounds 
+	- var currentRound = rounds[rounds.length - 1];
+	if currentRound.status === 'PREQUESTION'
+		.row
+			.columns.desktop-12.align-center
+				h2 #{currentRound.prequestionText}
+				h4 Please wait while the next question is being prepared.
+	if currentRound.status === 'OPEN'
+		.row
+			.columns.desktop-12.align-center
+				h6 Question #{rounds.length} - #{currentRound.title}
+				h4 #{currentRound.question}
+				if __view.hasBuzzedIn() 
+					h4 You may only buzz in once per round.
+			.columns.desktop-12.align-center
+				button.align-center.buzzer(disabled=__view.hasBuzzedIn(), class=team.color) BUZZ IN!
+	if currentRound.status === 'PAUSED'
+		if currentRound.buzzed.id === team.id
+			.row
+				.columns.desktop-12
+				h1.align-center You buzzed in.
+		else	
+			.row
+				.columns.desktop-12.align-center
+					h1 #{currentRound.buzzed.name} Buzzed in.
+					h4 Be ready though, if they get it wrong then you'll have another chance to buzz in!
+	if currentRound.status === 'CLOSED'
+		.row
+			.columns.desktop-12
+				h2 Thank you all for playing. Hope you had fun. See you next time!

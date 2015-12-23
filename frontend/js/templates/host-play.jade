@@ -1,0 +1,46 @@
+if rounds
+	- var currentRound = rounds[rounds.length - 1]
+	.row
+		.columns.desktop-6.no-pad-top
+			h2 Controls
+			.row
+				- var openOrPaused = currentRound.status === 'OPEN' || currentRound.status === 'PAUSED';
+				.columns.desktop-12.no-pad-top
+					h6 Question:
+					input.question-title(placeholder='Question Title', value=currentRound.title)
+					textarea.question(placeholder='TYPE QUESTION HERE', disabled=openOrPaused) #{currentRound.question}
+				.columns.desktop-12.no-pad-top
+					if currentRound.status === 'PREQUESTION'
+						button.open-question.columns.desktop-12 OPEN QUESTION
+					else
+						button.close-question.columns.desktop-12 CLOSE QUESTION
+				.columns.desktop-12.align-center.no-pad-top
+					if currentRound.buzzed
+						h4 TEAM #{currentRound.buzzed.name} BUZZED IN
+					else
+						h4 Prepare the next question by enter a title, question and adjusting the points.
+				.columns.desktop-6.no-pad-top
+					button.wrong-btn(disabled=currentRound.status !== 'PAUSED') WRONG
+				.columns.desktop-6.no-pad-top.no-pad-top
+					button.correct-btn(disabled=currentRound.status !== 'PAUSED') CORRECT
+		.columns.desktop-6.no-pad-top.no-pad-top
+			h2 Current Settings
+			.row
+				.columns.desktop-6.no-pad-top
+					h5 Question #:
+					h2 #{rounds.length}
+				.columns.desktop-6.no-pad-top
+					h5 Status: 
+					h2 #{currentRound.status}
+				.columns.desktop-6.no-pad-top.no-pad-top
+					h6 Wrong Points
+				.columns.desktop-6.no-pad-top.no-pad-top
+					h6 Correct Points
+				.columns.desktop-6.wrong-points-adjuster.no-pad-top.no-pad-top
+					button.plus +
+					h6 #{currentRound.wrongPoints}
+					button.minus -
+				.columns.desktop-6.correct-points-adjuster.no-pad-top
+					button.plus +
+					h6 #{currentRound.points}
+					button.minus -
