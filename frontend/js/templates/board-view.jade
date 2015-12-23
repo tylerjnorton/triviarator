@@ -19,17 +19,17 @@ main.scoreboard
 							.row
 								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
 									.row
-										.columns.desktop-2.no-pad
-											h6.color-10.align-center Correct
-											h1.color-10.align-center #{currentRound.points}
-											h6.color-10.align-center Points
+										.columns.desktop-2.no-pad-side.color-10
+											h6.align-center Correct
+											h1.align-center #{currentRound.points}
+											h6.align-center Points
 										.columns.desktop-8
 											h5 Question #{rounds.length}
 											h2 #{currentRound.title}
-										.columns.desktop-2.no-pad
-											h6.color-3.align-center Wrong
-											h1.color-3.align-center #{currentRound.wrongPoints}
-											h6.color-3.align-center Points
+										.columns.desktop-2.no-pad-side.color-3
+											h6.align-center Wrong
+											h1.align-center #{currentRound.wrongPoints}
+											h6.align-center Points
 								.columns.desktop-12.vertical-pad
 									h2 Please wait while the next question is being prepared.
 									h4 #{currentRound.prequestionText}
@@ -37,51 +37,51 @@ main.scoreboard
 							.row
 								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
 									.row
-										.columns.desktop-2.no-pad
-											h6.color-10.align-center Correct
-											h1.color-10.align-center #{currentRound.points}
-											h6.color-10.align-center Points
+										.columns.desktop-2.no-pad-side.color-10
+											h6.align-center Correct
+											h1.align-center #{currentRound.points}
+											h6.align-center Points
 										.columns.desktop-8
 											h5 Question #{rounds.length}
 											h2 #{currentRound.title}
-										.columns.desktop-2.no-pad
-											h6.color-3.align-center Wrong
-											h1.color-3.align-center #{currentRound.wrongPoints}
-											h6.color-3.align-center Points
+										.columns.desktop-2.no-pad-side.color-3
+											h6.align-center Wrong
+											h1.align-center #{currentRound.wrongPoints}
+											h6.align-center Points
 								.columns.desktop-12.vertical-pad
 									h1 #{currentRound.question}
 						if currentRound.status === 'PAUSED'
 							.row
 								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
 									.row
-										.columns.desktop-2.no-pad
-											h6.color-10.align-center Correct
-											h1.color-10.align-center #{currentRound.points}
-											h6.color-10.align-center Points
+										.columns.desktop-2.no-pad-side.color-10
+											h6.align-center Correct
+											h1.align-center #{currentRound.points}
+											h6.align-center Points
 										.columns.desktop-8
 											h5 Question #{rounds.length}
 											h2 #{currentRound.title}
-										.columns.desktop-2.no-pad
-											h6.color-3.align-center Wrong
-											h1.color-3.align-center #{currentRound.wrongPoints}
-											h6.color-3.align-center Points
+										.columns.desktop-2.no-pad-side.color-3
+											h6.align-center Wrong
+											h1.align-center #{currentRound.wrongPoints}
+											h6.align-center Points
 								.columns.desktop-12.vertical-pad
 									h2 #{currentRound.buzzed.name} buzzed in!
 						if currentRound.status === 'CLOSED'	
 							.row
 								.columns.desktop-12.ptsdisplay.black-bg-25.no-pad-top.margin-fix.no-pad-bottom
 									.row
-										.columns.desktop-2.no-pad
-											h6.color-10.align-center Correct
-											h1.color-10.align-center #{currentRound.points}
-											h6.color-10.align-center Points
+										.columns.desktop-2.no-pad-side.color-10
+											h6.align-center Correct
+											h1.align-center #{currentRound.points}
+											h6.align-center Points
 										.columns.desktop-8
 											h5 Question #{rounds.length}
 											h2 #{currentRound.title}
-										.columns.desktop-2.no-pad
-											h6.color-3.align-center Wrong
-											h1.color-3.align-center #{currentRound.wrongPoints}
-											h6.color-3.align-center Points
+										.columns.desktop-2.no-pad-side.color-3
+											h6.align-center Wrong
+											h1.align-center #{currentRound.wrongPoints}
+											h6.align-center Points
 								.columns.desktop-12.vertical-pad
 									h2 No one answered that one correctly.
 footer

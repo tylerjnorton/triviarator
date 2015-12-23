@@ -66,9 +66,7 @@ main{
 }
 
 header, footer{
-	.row{
-		margin: 0;
-	}
+
 	&.board{
 		padding: 2vw;
 	}
@@ -110,9 +108,10 @@ ul {
 		}
 	}
 	.columns {
-	&.no-pad-top{padding-top:0px}
-	&.no-pad-bottom{padding-bottom:0px}
-	&.no-pad{padding:0px}
+	&.no-pad-top{padding-top:0px;}
+	&.no-pad-bottom{padding-bottom:0px;}
+	&.no-pad{padding:0px;}
+	&.no-pad-side{padding:1vw 0;}
 	&.margin-fix{margin: 0 1vw; width: 98%;}
 	&.vertical-pad{padding: 100px;}
 		padding: 1vw; 
@@ -321,7 +320,6 @@ button {
 
 .black-bg-25 {
   background-color: rgba(0,0,0,0.15);
-  p, h1, h2, h3, h4, h6 {color: #fff;}
 }
 
 .white-bg {
